@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-/* import { Link } from 'react-router-dom' */
+import { Link } from 'react-router-dom'
 
 const api = 'https://restcountries.eu/rest/v2/all'
 
@@ -17,7 +17,7 @@ const Countries = () => {
     }, [])
 
     return (
-        <section>
+        <section className="d-grid">
             {countries.map((country) => {
                 const {
                     numericCode, 
@@ -30,11 +30,15 @@ const Countries = () => {
                 return (
                 <article key={numericCode}>
                     <div>
-                        <img src={flag} alt={name}/>
-                        <h4>{name}</h4>
-                        <h5>Population: <span>{population}</span></h5>
-                        <h5>Region: <span>{region}</span></h5>
-                        <h5>Capital: <span>{capital}</span></h5>
+                        <Link to={`/countries/${name}`}>
+                            <img src={flag} alt={name}/>
+                        </Link>
+                        <div className="home-details">
+                            <h3>{name}</h3>
+                            <h5>Population: <span>{population}</span></h5>
+                            <h5>Region: <span>{region}</span></h5>
+                            <h5>Capital: <span>{capital}</span></h5>
+                        </div>
                     </div>
                 </article>
                 )
