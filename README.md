@@ -5,6 +5,8 @@ You can Find it by the name
 
 ### REST Countries API with color theme switcher coding challenge
 
+You can see the last version deployed here: [https://api-countries-react.doniben.vercel.app/](https://api-countries-react.doniben.vercel.app/)
+
 ## Installation
 
 Clone the repo:
