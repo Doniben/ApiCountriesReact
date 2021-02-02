@@ -18,14 +18,14 @@ const Countries = () => {
 
     return (
         <section className="d-grid">
-            {countries.map((country) => {
+            {countries.map((countries) => {
                 const {
                     numericCode, 
                     name, 
                     population, 
                     region, 
                     capital, 
-                    flag} = country
+                    flag} = countries
     
                 return (
                 <article key={numericCode}>
@@ -34,7 +34,7 @@ const Countries = () => {
                             <img src={flag} alt={name}/>
                         </Link>
                         <div className="home-details">
-                            <h3>{name}</h3>
+                            <h3 className="country-name">{name}</h3>
                             <h5>Population: <span>{population}</span></h5>
                             <h5>Region: <span>{region}</span></h5>
                             <h5>Capital: <span>{capital}</span></h5>
