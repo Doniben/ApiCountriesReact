@@ -22,10 +22,49 @@ body {
   color: var(--dark-text);
 }
 
+body.light-view {
+  background-color: var(--light-bg-color);
+  color: var(--light-text);
+}
+
 img {
   width: 100%;
   background-size: cover;
   border-radius: 5px 5px 0 0;
+}
+
+/*  BUTTONS */
+
+.btn-moon {
+  background-color: var(--elements-dark-color);
+  color: var(--light-bg-color);
+  cursor: pointer;
+  border: 2px solid var(--elements-dark-color);
+  border: none;
+  outline:none;
+}
+
+.btn-moon.light-view {
+  background-color: var(--elements-light-color);
+  color: var(--light-text);
+}
+
+.btn {
+  margin-top: 20px;
+  background-color: var(--elements-dark-color);
+  padding: 10px;
+  color: var(--dark-text);
+  border-radius: 5px;
+  transition: background-color 0.5s;
+}
+
+.btn:hover {
+  background-color: var(--elements-light-color);
+  color: var(--light-text);
+}
+
+.btn-light {
+  background-color: var(--elements-dark-color);
 }
 
 /* GRID */
@@ -42,6 +81,11 @@ img {
   background-color: var(--elements-dark-color);
   border-radius: 0 0 5px 5px;
   margin-top: -10px;
+  box-shadow: 0 1px 20px hsl(209, 23%, 22%, 0.2);
+}
+
+.home-details.light-view {
+  background-color: var(--elements-light-color);
 }
 
 .d-grid .home-details h3 {
@@ -57,11 +101,19 @@ img {
   font-weight: 300;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 600px) {
   .search-options {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
   }
+  .form-control input {
+    width: 100%;
+  }
+  .nav {
+    padding: 10px 40px;
+  }
+}
+
+@media (min-width: 600px) {
   .d-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -69,6 +121,9 @@ img {
 
 @media (min-width: 700px) {
 
+  .nav {
+    padding: 10px 100px;
+  }
   .search-options .filter-option{
     width: auto;
   }
@@ -99,6 +154,7 @@ img {
   justify-content: space-between;
   background-color: var(--elements-dark-color);
   padding: 10px 100px;
+  box-shadow: 0 1px 20px hsl(209, 23%, 22%, 0.1);
 }
 
 .nav div h1 {
@@ -109,6 +165,12 @@ img {
   float: right;
 }
 
+.nav.light-view {
+  background-color: var(--elements-light-color);
+  color: var(--light-text);
+
+}
+
 .span {
   font-family: 'Nunito Sans', sans-serif;
 }
@@ -117,8 +179,6 @@ img {
 
 .search-options {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
   padding: 30px;
 }
@@ -155,7 +215,11 @@ img {
   padding: 10px;
   background-color: var(--elements-dark-color);
   color: var(--dark-text);
-  width: 100%;
+
+}
+
+.form-control input.light-view, .filter-option select.light-view {
+  background-color: var(--light-mode-input);
 }
 
 @media (min-width: 900px) {
