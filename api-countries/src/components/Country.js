@@ -16,7 +16,7 @@ const Country = () => {
             console.log(country)
         }
         fetchCountry()
-    }, [])
+    }, [name])
     return (
         <>
             <section className="country">
@@ -66,7 +66,7 @@ const Country = () => {
                             <h5 className="h5-borders">Border Countries: </h5><span className="borders">{borders.map((border) => {
                                 return (
                                     <ul key={border}>
-                                        <li>{border}</li>
+                                        <li className="borders">{border}</li>
                                     </ul>
                                 )
                             })}</span>
