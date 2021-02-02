@@ -9,15 +9,14 @@ import Search from './components/Search'
 function App() {
   return (
     <Router>
-      <Route exact path="/">
         <Navbar />
-        <Search />
-        <Countries />
-      </Route>
-      <Route path="/countries/:name" children={
-        <Country />
-      }>
-      </Route>
+        <Route exact path="/">
+          <Search />
+          <Countries />
+        </Route>
+        <Route path="/countries/:name" children={
+          <Country />}>
+        </Route>
     </Router>
   )
 }
